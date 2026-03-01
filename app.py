@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from dotenv import load_dotenv
-from zhipuai import ZhipuAI
+from zai import ZaiClient
 
 load_dotenv()
 
@@ -387,7 +387,7 @@ def get_zhipu_client():
     if not api_key:
         st.error("⚠️ API Key not found.")
         return None
-    return ZhipuAI(api_key=api_key)
+    return ZaiClient(api_key=api_key)
 
 def generate_exam_content(unit_name, pasted_text, additional_points, syllabus_reference, client):
     prompt = f"""
